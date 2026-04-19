@@ -19,20 +19,18 @@ function getUser() {
 }
 
 // 3. Promise.all
-const allData = Promise.all([getTodo(), getUser()])
+Promise.all([getTodo(), getUser()])
   .then(results => {
     console.log("Promise.all result:", results);
-    return results;
   })
   .catch(error => {
     console.error("Promise.all error:", error);
   });
 
 // 4. Promise.race
-const raceData = Promise.race([getTodo(), getUser()])
+Promise.race([getTodo(), getUser()])
   .then(result => {
     console.log("Promise.race result:", result);
-    return result;
   })
   .catch(error => {
     console.error("Promise.race error:", error);
