@@ -8,8 +8,11 @@ export default defineConfig([
     plugins: { js },
     extends: ["js/recommended"],
     languageOptions: {
-      globals: globals.node,
-      sourceType: "module", // 
+      globals: {
+        ...globals.node,
+        ...globals.jest, // 👈 ДОДАЙ ОЦЕ
+      },
+      sourceType: "module",
     },
   },
 ]);
